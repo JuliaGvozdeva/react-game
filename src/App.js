@@ -1,9 +1,10 @@
-import Game from './components/Game/Game'
+import Game from './Game/Game'
 import commonStyles from './common/styles/common'
 
 function App() {
+  const styles = commonStyles();
   return (
-    <div className={commonStyles.app}>
+    <div className={styles.containerPageCenter}>
       <Game />
     </div>
   );
