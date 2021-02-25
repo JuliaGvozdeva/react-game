@@ -26,6 +26,39 @@ export const stylesGame = {
   gameBtnImg: {
     width: '100%',
     height: '100%'
+  },
+
+  settingsConatainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'baseline',
+    rowGap: '1em'
+  },
+
+  settingsItem: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    columnGap: '1em'
+  },
+
+  settingsImg: {
+    width: '60px',
+    height: '60px'
+  },
+
+  sliderControl: {
+    width: '150px',
+  },
+
+  toggleContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    columnGap: '2em',
+    marginTop: '2em',
+    color: 'black'
   }
 
 };
