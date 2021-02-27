@@ -1,14 +1,16 @@
-import Game from './Game/Game';
-import Settings from './Settings/Settings';
+import { BrowserRouter as Router } from 'react-router-dom';
 import commonStyles from './common/styles/common';
+import Switcher from './common/Switcher/Switcher';
 
 function App() {
   const styles = commonStyles();
   return (
-    <div className={styles.containerPageCenter}>
-      <Game />
-      <Settings />
-    </div>
+
+    <Router>
+      <div className={styles.containerPageCenter}>
+        <Switcher />
+      </div>
+    </Router>
   );
 }
 

@@ -4,6 +4,7 @@ import gameStyles from './GameStyles';
 
 export default function Game(props) {
   const styles = gameStyles();
+
   return (
     <div className={styles.gameCenterContainer}>
       <div className={styles.resultsContainer}>
@@ -16,7 +17,7 @@ export default function Game(props) {
           {/* <StepCounter /> */}
         </div>
       </div>
-      <GameField />
+      <GameField gamePrefield={props.gamePrefield} />
       <div className={styles.gameBtnContainer}>
         <Button className={styles.gameBtn}>
           <img className={styles.gameBtnImg} src='../../images/play.png' alt='play' />

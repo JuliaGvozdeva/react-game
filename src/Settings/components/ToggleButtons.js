@@ -55,7 +55,6 @@ function ToggleButtons({ lang, toggleLang, theme, toggleTheme }) {
       >
         {createToggleBtn(lang === 'en' ? THEME.EN : THEME.RU)}
       </ToggleButtonGroup>
-      { console.log(lang, theme)}
     </div>
 
   );

@@ -5,9 +5,10 @@ export const stylesCommonObj = {
     margin: '0 auto',
     width: '1200px',
     padding: '0px 20px',
+    position: 'relative',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   }
 };
 
