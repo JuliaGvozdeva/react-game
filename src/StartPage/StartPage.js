@@ -1,12 +1,13 @@
 import Navigation from '../Navigation/Navigation';
 import Game from '../Game/Game';
-import { Container } from '@material-ui/core';
+import Styles from '../common/styles/common';
 
 export default function StartPage() {
+  const styles = Styles();
   return (
-    <Container>
+    <div className={styles.centerContainer}>
       <Navigation />
-      <Game />
-    </Container >
+      <Game gamePrefield={true} />
+    </div>
   );
 }

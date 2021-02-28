@@ -1,17 +1,8 @@
 import NavStyles from './StylesNav';
 import { Button } from '@material-ui/core';
-import Game from '../Game/Game';
-import Settings from '../Settings/Settings';
-import StartPage from '../Settings/Settings';
-import Statistics from '../Statistics/StatisticsPage';
 import React from "react";
 import { connect } from 'react-redux';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function handleChange(e) {
   const modalWindow = document.getElementById('navModalContainer');

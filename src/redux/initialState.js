@@ -14,7 +14,7 @@ const initialState = {
     },
     {
       id: 'isSizeGame',
-      state: 4,
+      state: 3,
     },
   ],
   lang: 'en',

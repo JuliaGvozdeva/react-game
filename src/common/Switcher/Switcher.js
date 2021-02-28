@@ -13,7 +13,9 @@ export default function Switcher() {
   return (
     <Switch>
       <Route exact path='/' component={StartPage} />
-      <Route path='/game' component={Game} />
+      <Route path='/game'>
+        <Game gamePrefield={false} />
+      </Route>
       <Route path='/settings' component={Settings} />
       <Route path='/statistics' component={Statistics} />
       <Redirect path='*' to='/' />

@@ -18,7 +18,7 @@ export const stylesGameFieldObj = {
     display: 'flex',
     flexDirection: 'rows',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    columnGap: '0.5em',
     alignItems: 'center',
     padding: '5px 5px'
   },

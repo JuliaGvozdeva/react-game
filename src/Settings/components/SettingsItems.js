@@ -35,7 +35,7 @@ function createSettingsItem(item, lang, toggleSetting, styles) {
               max={100} />
           }
           className={styles.sliderControl}
-          label={lang === 'en' ? SETTINGS_ITEMS.RU[item.id] : SETTINGS_ITEMS.EN[item.id]}
+          label={lang === 'en' ? SETTINGS_ITEMS.EN[item.id] : SETTINGS_ITEMS.RU[item.id]}
         />
       </div>
     )
@@ -61,7 +61,7 @@ function createSettingsItem(item, lang, toggleSetting, styles) {
               <MenuItem value="8">8x8</MenuItem>
             </Select>
           }
-          label={lang === 'en' ? SETTINGS_ITEMS.RU[item.id] : SETTINGS_ITEMS.EN[item.id]}
+          label={lang === 'en' ? SETTINGS_ITEMS.EN[item.id] : SETTINGS_ITEMS.RU[item.id]}
         />
       </div>)
   } else {
@@ -78,7 +78,7 @@ function createSettingsItem(item, lang, toggleSetting, styles) {
               color='primary'
             />
           }
-          label={lang === 'en' ? SETTINGS_ITEMS.RU[item.id] : SETTINGS_ITEMS.EN[item.id]}
+          label={lang === 'en' ? SETTINGS_ITEMS.EN[item.id] : SETTINGS_ITEMS.RU[item.id]}
         />
       </div>
     )

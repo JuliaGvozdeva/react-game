@@ -9,7 +9,22 @@ export const stylesCommonObj = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-  }
+  },
+
+  centerContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  toggleNavButton: {
+    borderRadius: '50%',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    zIndex: '12'
+  },
+
 };
 
 const stylesCommon = makeStyles(stylesCommonObj);
