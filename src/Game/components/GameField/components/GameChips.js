@@ -18,9 +18,7 @@ export default function GameChips(props) {
     emptyField.id = clickElement.id;
     emptyField.innerText = clickElement.innerText;
     clickElement.id = 'empty';
-    clickElement.innerText = "";
-
-    console.log(clickElement.id, emptyField.id)
+    clickElement.innerText = '';
   }
 
   function checkAvailableFieldForChange() {
