@@ -31,6 +31,10 @@ export const stylesGameFieldObj = {
     justifyContent: 'center',
     alignItems: 'center'
   },
+
+  empty: {
+    background: 'none'
+  }
 };
 
 const styles = makeStyles(stylesGameFieldObj);

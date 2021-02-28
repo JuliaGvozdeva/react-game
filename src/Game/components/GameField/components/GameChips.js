@@ -1,38 +1,34 @@
-import styles from "../GameFieldStyle";
-import React, { useState } from "react";
-// import { exchangeFileds, checkOverGame } from '../GameFunctions/changeGameFields';
+import styles from '../GameFieldStyle';
+import React, { useState } from 'react';
+import Cell from './components/GameCell/GameCell';
 
 export default function GameChips(props) {
 
   const gameStyles = styles();
-
+  const endItem = props.sizeGame**2;
   const gameItems = props.gameItems;
 
-  const changeGameFields = (e) => {
-    let emptyField = document.getElementById('empty');
-    exchangeFileds(emptyField, e.target);
-    // checkOverGame(gameItems.length);
+  const changeGameFields = (cellItem) => {
+    // check available cells
+    exchangeFileds(cellItem);
   }
 
-  function exchangeFileds(emptyField, clickElement) {
-    emptyField.id = clickElement.id;
-    emptyField.innerText = clickElement.innerText;
-    clickElement.id = 'empty';
-    clickElement.innerText = '';
-  }
-
-  function checkAvailableFieldForChange() {
-
+  const exchangeFileds = (cellItem) => {
+    const board = gameItems.slice();
+    const item = board.indexOf(cellItem);
+    const empty = board.indexOf(endItem);
+    const temp = board[item];
+    board[item] = board[empty];
+    board[empty] = temp;
+    props.updateBoard(board);
   }
 
   return (
     <div className={gameStyles.gameFieldContainer}>
       {
-        gameItems.map((item, idx) => {
+        gameItems.map((item) => {
           return (
-            item === gameItems.length
-              ? <div id='empty' key={idx} className={gameStyles.gameItem} onClick={changeGameFields} draggable={true}></div>
-              : <div id={item} key={idx} className={gameStyles.gameItem} onClick={changeGameFields} draggable={true}>{item}</div>
+            <Cell key={item} value={item} clickHandler={changeGameFields.bind(this, item)} endItem={endItem} />
           )
         })
       }
