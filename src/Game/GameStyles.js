@@ -9,13 +9,6 @@ export const stylesGame = {
     paddingTop: '5%'
   },
 
-  gameBtnContainer: {
-    display: 'flex',
-    flexDirection: 'rows',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-
   resultsContainer: {
     display: 'flex',
     flexDirection: 'row',
@@ -50,25 +43,6 @@ export const stylesGame = {
       marginRight: '10px'
     }
   },
-
-  gameBtn: {
-    width: '80px',
-    height: '80px',
-    borderRadius: '50%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-
-    '&:hover': {
-      width: '90px',
-      height: '90px'
-    },
-  },
-
-  gameBtnImg: {
-    width: '100%',
-    height: '100%'
-  }
 
 };
 

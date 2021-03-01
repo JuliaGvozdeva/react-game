@@ -1,34 +1,29 @@
-import { Button } from '@material-ui/core';
 import GameField from './components/GameField/GameField'
 import gameStyles from './GameStyles';
+import React, {useState, useEffect} from 'react';
+import Timer from './components/Timer/Timer';
 
 export default function Game(props) {
   const styles = gameStyles();
+  const [count, setCount] = useState(0);
+
+  const handleChangeCount = (count) => { 
+    setCount(count);
+  }
 
   return (
     <div className={styles.gameCenterContainer}>
       <div className={styles.resultsContainer}>
         <div className={styles.timer}>
-          <img src='../../images/hourglass.png' alt='game-time' /> 0:00 s
-          {/* <Timer /> */}
+          <img src='../../images/hourglass.png' alt='game-time' />
+          <Timer/>
         </div>
         <div className={styles.stepCounter}>
-          <img src='../../images/counter.png' alt='step-count' /> 100
-          {/* <StepCounter /> */}
+          <img src='../../images/counter.png' alt='step-count' />
+          <span id='score'>{count}</span> 
         </div>
       </div>
-      <GameField gamePrefield={props.gamePrefield} />
-      <div className={styles.gameBtnContainer}>
-        <Button className={styles.gameBtn}>
-          <img className={styles.gameBtnImg} src='../../images/play.png' alt='play' />
-        </Button>
-        <Button className={styles.gameBtn}>
-          <img className={styles.gameBtnImg} src='../../images/repeate.png' alt='repeate-game' />
-        </Button>
-        <Button className={styles.gameBtn}>
-          <img className={styles.gameBtnImg} src='../../images/question.png' alt='repeate-game' />
-        </Button>
-      </div>
+      <GameField gamePrefield={props.gamePrefield} onCountChange={handleChangeCount} />
     </div>
   )
 }

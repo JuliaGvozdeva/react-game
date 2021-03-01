@@ -11,29 +11,74 @@ export const stylesGameFieldObj = {
     padding: '20px 20px'
   },
 
+  gameCenterContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column'
+  },
+
   gameFieldContainer: {
-    width: '330px',
-    height: '330px',
+    minWidth: '330px',
+    minHeight: '330px',
     background: '#24201b91',
     display: 'flex',
     flexDirection: 'rows',
     flexWrap: 'wrap',
-    columnGap: '0.5em',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
     padding: '5px 5px'
   },
 
   gameItem: {
-    width: '100px',
+    minWidth: '100px',
     height: '100px',
-    background: 'pink',
+    background: '#f4cfcff0',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderRadius: '5px',
+    border: '2px solid black',
+    cursor: 'pointer',
+    transition: '0.5s',
+
+    '&:hover': {
+      background: '#e9dbdb75',
+    }
   },
 
   empty: {
-    background: 'none'
+    background: 'none',
+    border: 'none',
+
+    '&:hover': {
+      background: 'none',
+    }
+  },
+
+  gameBtnContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    columnGap: '1em',
+  },
+
+  gameBtn: {
+    width: '80px',
+    height: '80px',
+    borderRadius: '50%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    '&:hover': {
+      width: '90px',
+      height: '90px'
+    },
+  },
+
+  gameBtnImg: {
+    width: '100%',
+    height: '100%'
   }
 };
 

@@ -8,7 +8,6 @@ import React, { useState } from "react";
 function App() {
   const styles = commonStyles();
   const [isSwowNavMenu, setIsSwowNavMenu] = useState(false);
-  // <Button onClick={() => { setIsSwowNavMenu(false) }}><img src='./images/close.png' alt='close-nav-menu' /></Button> 
   return (
     <Router>
       <div className={styles.containerPageCenter}>
@@ -16,7 +15,7 @@ function App() {
         {isSwowNavMenu
           ? <div>
             <Button className={styles.toggleNavButton} onClick={() => { setIsSwowNavMenu(false) }}><img src='./images/close.png' alt='nav-menu' /></Button>
-            <Navigation />
+            <Navigation isSwowNavMenu={isSwowNavMenu}/>
           </div>
           : <Button className={styles.toggleNavButton} onClick={() => { setIsSwowNavMenu(true) }}><img src='./images/menu.png' alt='nav-menu' /></Button>}
       </div>

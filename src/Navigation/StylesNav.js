@@ -8,11 +8,6 @@ export const stylesNav = {
     alignItems: 'center',
   },
 
-  modalHidden: {
-    display: 'none',
-    backgroundColor: 'red'
-  },
-
   overlay: {
     position: 'fixed',
     top: 0,
@@ -29,6 +24,7 @@ export const stylesNav = {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
+    position: 'absolute',
   },
 
   navMenuItem: {
@@ -45,6 +41,13 @@ export const stylesNav = {
       textTransform: 'none'
     }
   },
+  
+  closeNavMenu: {
+    zIndex: 12,
+    position: 'fixed',
+    top: 10,
+    right: 10
+  }
 };
 
 const styles = makeStyles(stylesNav);
