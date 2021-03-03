@@ -2,22 +2,22 @@ import React from 'react';
 import settingsStyles from '../SettingsStyle';
 import { ToggleButtonGroup, ToggleButton } from '@material-ui/lab';
 import { connect } from 'react-redux';
-import { toggleLang, toggleTheme } from '../../redux/actions';
+import { toggleLang, toggleImages } from '../../redux/actions';
 
 const LANGUAGES = {
   en: 'en',
   ru: 'ru',
 };
 
-const THEME = {
+const CONTENT = {
   EN: {
-    dark: 'dark',
-    light: 'light'
+    images: 'images',
+    numbers: 'numbers'
   },
   RU:
   {
-    dark: 'темная',
-    light: 'светлая'
+    images: 'Изображение',
+    numbers: 'Числа'
   }
 };
 
@@ -30,14 +30,14 @@ function createToggleBtn(buttonItems) {
       classes={{root: styles.toggleButton}}
       color='primary'
     >
-      {item.toUpperCase()}
+      {buttonItems[item].toUpperCase()}
     </ToggleButton >
   ));
 
   return buttons;
 }
 
-function ToggleButtons({ lang, toggleLang, theme, toggleTheme }) {
+function ToggleButtons({ lang, toggleLang, images, toggleImages }) {
   const styles = settingsStyles();
   return (
     <div className={styles.toggleContainer}>
@@ -51,13 +51,13 @@ function ToggleButtons({ lang, toggleLang, theme, toggleTheme }) {
         {createToggleBtn(LANGUAGES, styles)}
       </ToggleButtonGroup>
       <ToggleButtonGroup
-        value={theme}
+        value={images}
         exclusive
-        onChange={toggleTheme}
-        key='theme'
+        onChange={toggleImages}
+        key='image'
         className={styles.toggleButton}
       >
-        {createToggleBtn(lang === 'en' ? THEME.EN : THEME.RU)}
+        {createToggleBtn(lang === 'en' ? CONTENT.EN : CONTENT.RU)}
       </ToggleButtonGroup>
     </div>
 
@@ -66,12 +66,12 @@ function ToggleButtons({ lang, toggleLang, theme, toggleTheme }) {
 
 const mapStateToProps = (state) => ({
   lang: state.lang,
-  theme: state.theme,
+  images: state.images,
 });
 
 const mapDispatchToProps = {
   toggleLang,
-  toggleTheme
+  toggleImages
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ToggleButtons);

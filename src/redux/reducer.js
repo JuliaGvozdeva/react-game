@@ -11,8 +11,8 @@ const settingsReducer = (state = initialState, action) => {
     case 'TOGGLE_LANG':
       return { ...state, lang: action.value }
 
-    case 'TOGGLE_THEME':
-      return { ...state, theme: action.value }
+    case 'TOGGLE_IMAGES':
+      return { ...state, images: action.value }
 
     case 'TOGGLE_SCORE':
       return { ...state, score: action.payload }

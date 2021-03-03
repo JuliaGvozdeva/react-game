@@ -7,8 +7,8 @@ export default function StartPage() {
   const styles = Styles();
 
   return (
-    <div className={styles.centerContainer}>
-      <Navigation />
+    <div>
+      <Navigation isShownNav={()=>{return true}} />
       <Game gamePrefield={true} />
     </div>
   );

@@ -87,7 +87,6 @@ function createSettingsItem(item, lang, toggleSetting, styles) {
 }
 
 function SettingsItems({ settings, lang, toggleSetting }) {
-  console.log(lang);
   const styles = settingsStyles();
   return (
     <div className={styles.settingsConatainer}>

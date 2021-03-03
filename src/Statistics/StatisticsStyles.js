@@ -17,10 +17,16 @@ export const stylesStatistics = {
     flexDirection: 'column',
   },
 
-  toggleNavButton: {
-    borderRadius: '50%',
-    marginBottom: '10px',
-    zIndex: '12'
+  navButton: {
+    marginBottom: '20px',
+    width: '50%',
+    color: 'black!important',
+    border: '1px solid rgb(0 0 0 / 50%);',
+    backgroundColor: 'rgb(201 105 0 / 62%)',
+
+    '&:hover': {
+      backgroundColor: 'rgb(201 105 0 / 22%)',
+    }
   },
 
   table: {

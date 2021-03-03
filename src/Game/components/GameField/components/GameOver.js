@@ -1,21 +1,23 @@
 import React, {useEffect, useState} from 'react';
 import commonStyle from '../../../../common/styles/common'; 
 import { Button } from '@material-ui/core';
+import { connect } from 'react-redux';
 
-export default function GameOver(props) {
+function GameOver({isOpen, lang, text, isNewStart, isShownGameOver, isPrefield}) {
   const stylesCommon = commonStyle();
-  const [isShown, setIsShown] = useState(props.isOpen);
+  const [isShown, setIsShown] = useState(isOpen);
 
   const startNewGame = () => {
-    props.isShownGameOver(false);
+    isShownGameOver(false);
     setIsShown(false);
-    props.isNewStart(true);
+    isNewStart(true);
   }
 
   const goToStart = () => {
     localStorage.board = '';
     localStorage.score = 0;
-    props.isShownGameOver(false);
+    localStorage.image = '';
+    isShownGameOver(false);
     setIsShown(false);
     window.location.href = '/';
   }
@@ -43,8 +45,6 @@ export default function GameOver(props) {
       name: userName
     };
 
-    console.log(bestScore);
-
     let arr = [];
     if (localStorage.statistics) {
         arr = JSON.parse(localStorage.statistics);
@@ -68,21 +68,19 @@ export default function GameOver(props) {
   }
 
   useEffect(() => {
-    if (isShown && !props.isPrefield) {
+    if (isShown && !isPrefield) {
       saveBestResults(); 
     }
   }, [])
-
-  console.log(isShown)
   
   if (isShown) {
     return (
       <div className={stylesCommon.centerContainer}>
           <div className={stylesCommon.modalDiv}>
-            {props.text}
+            {text}
             <div className={stylesCommon.modalButtonContainer}>
-              <Button className={stylesCommon.modalButton} onClick={startNewGame}>Repeat game</Button>
-              <Button className={stylesCommon.modalButton} onClick={goToStart}>Cancel</Button>
+              <Button className={stylesCommon.modalButton} onClick={startNewGame}>{lang === 'en' ? 'New game' : 'Новая игра'}</Button>
+              <Button className={stylesCommon.modalButton} onClick={goToStart}>{lang === 'en' ? 'Cancel' : 'Отмена'}</Button>
             </div>
           </div>
         <div className={stylesCommon.overlay}></div>
@@ -94,3 +92,9 @@ export default function GameOver(props) {
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  lang: state.lang
+});
+
+export default connect(mapStateToProps)(GameOver);

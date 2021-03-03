@@ -8,6 +8,6 @@ export default function GameCell(props) {
     const classCell = value === endItem ? `${gameStyles.gameItem} ${gameStyles.empty}` : `${gameStyles.gameItem}`;
 
     return (
-        <div id={value} className={classCell} onClick={() => props.clickHandler()} draggable={true}>{value === endItem ? '' : value}</div>
+        <div style={props.style} id={value} className={classCell} onClick={() => props.clickHandler()}>{value === endItem ? '' : value}</div>
     )
 }

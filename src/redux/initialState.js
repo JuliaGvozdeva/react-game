@@ -18,7 +18,7 @@ const initialState = {
     },
   ],
   lang: 'en',
-  theme: 'dark',
+  images: 'images',
   score: 0
 };
 

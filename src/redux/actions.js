@@ -18,16 +18,15 @@ export function toggleLang(lang) {
   };
 }
 
-export function toggleTheme(theme) {
+export function toggleImages(images) {
   return {
-    type: 'TOGGLE_THEME',
-    value: theme.target.value || theme.target.parentNode.value,
-    payload: theme,
+    type: 'TOGGLE_IMAGES',
+    value: images.target.value || images.target.parentNode.value,
+    payload: images,
   };
 }
 
 export function toggleScore(score) {
-  console.log("score", score);
   return {
     type: 'TOGGLE_SCORE',
     value: score,

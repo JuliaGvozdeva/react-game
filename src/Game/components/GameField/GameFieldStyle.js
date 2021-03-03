@@ -40,7 +40,7 @@ export const stylesGameFieldObj = {
     borderRadius: '5px',
     border: '2px solid black',
     cursor: 'pointer',
-    transition: '0.5s',
+    transition: 'all 0.1s ease-in-out',
 
     '&:hover': {
       background: '#e9dbdb75',
@@ -48,7 +48,7 @@ export const stylesGameFieldObj = {
   },
 
   empty: {
-    background: 'none',
+    background: 'none!important',
     border: 'none',
 
     '&:hover': {

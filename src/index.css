@@ -3,8 +3,12 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
   background: url('assets/images/bg_tries.jpg') no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  height:100%;
 }
 
 code {

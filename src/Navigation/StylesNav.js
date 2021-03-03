@@ -24,6 +24,7 @@ export const stylesNav = {
     alignItems: 'center',
     flexDirection: 'column',
     position: 'absolute',
+    top: '45%'
   },
 
   navMenuItem: {

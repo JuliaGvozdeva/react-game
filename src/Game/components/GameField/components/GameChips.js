@@ -3,7 +3,7 @@ import React from 'react';
 import Cell from './components/GameCell/GameCell';
 import { connect } from 'react-redux';
 
-function GameChips({gameItems, sizeGame,  areEffectsOn, musicVolume, updateBoard}) {
+function GameChips({gameItems, sizeGame,  areEffectsOn, musicVolume, updateBoard, isImages, backImage}) {
   const gameStyles = styles();
   const size = sizeGame;
   const endItem = sizeGame**2;
@@ -49,12 +49,16 @@ function GameChips({gameItems, sizeGame,  areEffectsOn, musicVolume, updateBoard
     board[empty] = temp;
     updateBoard(board);
   }
+
   return (
     <div className={gameStyles.gameFieldContainer} style={{width: sizeContainer, height: sizeContainer}}>
       {
         gameItems.map((item) => {
+          let xpos = (100 * (item % size)) + '%';
+          let ypos = (100 * Math.floor(item / size)) + '%';
+
           return (
-            <Cell key={item} value={item} clickHandler={changeGameFields.bind(this, item)} endItem={endItem}/>
+            <Cell style={isImages === 'images' ? {backgroundImage: `url(${backImage})`, backgroundPosition: `-${xpos} -${ypos}`, backgroundSize: (size * 100) + '%'} : null} key={item} value={item} clickHandler={changeGameFields.bind(this, item)} endItem={endItem}/>
           )
         })
       }
@@ -65,7 +69,7 @@ function GameChips({gameItems, sizeGame,  areEffectsOn, musicVolume, updateBoard
 const mapStateToProps = (state) => ({
   areEffectsOn: state.settings[0].state,
   musicVolume: state.settings[2].state,
-  sizeGame: state.settings[3].state
+  isImages: state.images
 });
 
 export default connect(mapStateToProps)(GameChips);

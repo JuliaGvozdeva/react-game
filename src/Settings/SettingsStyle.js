@@ -65,6 +65,18 @@ export const stylesGame = {
     color: 'black!important',
     border: '1px solid rgb(0 0 0 / 50%);',
     backgroundColor: 'rgb(201 105 0 / 62%)'
+  },
+
+  navButton: {
+    marginTop: '20px',
+    width: '100%',
+    color: 'black!important',
+    border: '1px solid rgb(0 0 0 / 50%);',
+    backgroundColor: 'rgb(201 105 0 / 62%)',
+
+    '&:hover': {
+      backgroundColor: 'rgb(201 105 0 / 22%)',
+    }
   }
 };
 
