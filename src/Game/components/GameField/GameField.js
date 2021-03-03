@@ -7,7 +7,7 @@ import generateGameElements from './GameFunctions/generateGameElements';
 import GameOver from '../GameField/components/GameOver';
 import { Button } from '@material-ui/core';
 import Navigation from '../../../Navigation/Navigation';
-import Timer from '../Timer/Timer';
+// import Timer from '../Timer/Timer';
 
 function GameField({ size, gamePrefield, lang }) {
   const gameStyles = style();
@@ -126,11 +126,11 @@ function GameField({ size, gamePrefield, lang }) {
   return (
     <div className={gameStyles.gameCenterContainer}>
       <div className={styles.resultsContainer}>
-        <div><span id='userName' contenteditable='true' onClick={clearUserNameField} onKeyPress={setUpUserName} onBlur={setUpUserName}>{userName}</span></div>
-        <div className={styles.timer}>
+        <div className={styles.timer}><span id='userName' contenteditable='true' onClick={clearUserNameField} onKeyPress={setUpUserName} onBlur={setUpUserName}>{userName}</span></div>
+        {/* <div className={styles.timer}>
           <img src='../../images/hourglass.png' alt='game-time' />
           <Timer/>
-        </div>
+        </div> */}
         <div className={styles.stepCounter}>
           <img src='../../images/counter.png' alt='step-count' />
           <span>{counter}</span> 
