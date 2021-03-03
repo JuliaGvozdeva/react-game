@@ -22,10 +22,12 @@ const THEME = {
 };
 
 function createToggleBtn(buttonItems) {
+  const styles = settingsStyles();
   const buttons = Object.keys(buttonItems).map((item, idx) => (
     < ToggleButton
       value={item}
       key={`${item}${idx}`}
+      classes={{root: styles.toggleButton}}
       color='primary'
     >
       {item.toUpperCase()}
@@ -44,14 +46,16 @@ function ToggleButtons({ lang, toggleLang, theme, toggleTheme }) {
         exclusive
         onChange={toggleLang}
         key='lang'
+        className={styles.toggleButton}
       >
-        {createToggleBtn(LANGUAGES)}
+        {createToggleBtn(LANGUAGES, styles)}
       </ToggleButtonGroup>
       <ToggleButtonGroup
         value={theme}
         exclusive
         onChange={toggleTheme}
         key='theme'
+        className={styles.toggleButton}
       >
         {createToggleBtn(lang === 'en' ? THEME.EN : THEME.RU)}
       </ToggleButtonGroup>

@@ -8,12 +8,14 @@ const settingsReducer = (state = initialState, action) => {
       newSettings[index].state = action.value;
       return { ...state, settings: [...newSettings] }
 
-
     case 'TOGGLE_LANG':
       return { ...state, lang: action.value }
 
     case 'TOGGLE_THEME':
       return { ...state, theme: action.value }
+
+    case 'TOGGLE_SCORE':
+      return { ...state, score: action.payload }
 
     default: return state;
   }

@@ -31,8 +31,9 @@ function createSettingsItem(item, lang, toggleSetting, styles) {
               aria-labelledby="continuous-slider"
               value={item.state}
               onChange={toggleSetting}
+              step={0.1}
               min={0}
-              max={100} />
+              max={1} />
           }
           className={styles.sliderControl}
           label={lang === 'en' ? SETTINGS_ITEMS.EN[item.id] : SETTINGS_ITEMS.RU[item.id]}
@@ -86,13 +87,13 @@ function createSettingsItem(item, lang, toggleSetting, styles) {
 }
 
 function SettingsItems({ settings, lang, toggleSetting }) {
+  console.log(lang);
   const styles = settingsStyles();
   return (
     <div className={styles.settingsConatainer}>
       {settings.map((item) => {
         return createSettingsItem(item, lang, toggleSetting, styles);
       })}
-
     </div>
   )
 }

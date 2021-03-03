@@ -10,7 +10,7 @@ const initialState = {
     },
     {
       id: 'musicVolume',
-      state: 50,
+      state: 0.5,
     },
     {
       id: 'isSizeGame',
@@ -18,7 +18,8 @@ const initialState = {
     },
   ],
   lang: 'en',
-  theme: 'dark'
+  theme: 'dark',
+  score: 0
 };
 
 export default initialState;

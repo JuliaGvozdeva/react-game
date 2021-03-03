@@ -59,8 +59,13 @@ export const stylesGame = {
     columnGap: '2em',
     marginTop: '2em',
     color: 'black'
-  }
+  },
 
+  toggleButton: {
+    color: 'black!important',
+    border: '1px solid rgb(0 0 0 / 50%);',
+    backgroundColor: 'rgb(201 105 0 / 62%)'
+  }
 };
 
 const styles = makeStyles(stylesGame);

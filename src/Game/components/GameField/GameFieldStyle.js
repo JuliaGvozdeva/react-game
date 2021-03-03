@@ -31,8 +31,8 @@ export const stylesGameFieldObj = {
   },
 
   gameItem: {
-    minWidth: '100px',
-    height: '100px',
+    minWidth: '95px',
+    height: '95px',
     background: '#f4cfcff0',
     display: 'flex',
     justifyContent: 'center',

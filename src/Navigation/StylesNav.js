@@ -2,7 +2,6 @@ import { makeStyles } from '@material-ui/core';
 
 export const stylesNav = {
   navModalContainer: {
-    position: 'absolute',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

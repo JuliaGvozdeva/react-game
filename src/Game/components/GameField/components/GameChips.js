@@ -1,16 +1,14 @@
 import styles from '../GameFieldStyle';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Cell from './components/GameCell/GameCell';
+import { connect } from 'react-redux';
 
-export default function GameChips(props) {
+function GameChips({gameItems, sizeGame,  areEffectsOn, musicVolume, updateBoard}) {
   const gameStyles = styles();
-  const size = props.sizeGame;
-  const endItem = props.sizeGame**2;
-  const gameItems = props.gameItems;
-  const zeroIndex = props.gameItems.indexOf(endItem);
+  const size = sizeGame;
+  const endItem = sizeGame**2;
+  const zeroIndex = gameItems.indexOf(endItem);
   const sizeContainer = 110 * size;
-
-  // const [counter, setCounter] = useState(props.score);
 
   const getCoordFromIndex = (idx, size) => {
     return {row: Math.floor(idx / size) + 1, column: (idx % size) + 1};
@@ -23,6 +21,12 @@ export default function GameChips(props) {
   const zeroCoordinate = getCoordFromIndex(zeroIndex, size);
 
   const changeGameFields = (cellItem) => {
+    if (areEffectsOn) {
+      let audio = new Audio('./sounds/click.wav');
+      audio.play();
+      audio.volume = musicVolume;
+    }
+
     const possibleTopIdx = zeroCoordinate.row > 0 ? getIndexFromCoord(zeroCoordinate.row - 1, zeroCoordinate.column, size) : null;
     const possiblRightIdx = zeroCoordinate.column < size ? getIndexFromCoord(zeroCoordinate.row, zeroCoordinate.column + 1, size) : null;
     const possiblBottomIdx = zeroCoordinate.row < size ? getIndexFromCoord(zeroCoordinate.row + 1, zeroCoordinate.column, size) : null;
@@ -37,25 +41,31 @@ export default function GameChips(props) {
   }
 
   const exchangeFileds = (cellItem) => {
-    props.onCountChange();
     const board = gameItems.slice();
     const item = board.indexOf(cellItem);
     const empty = board.indexOf(endItem);
     const temp = board[item];
     board[item] = board[empty];
     board[empty] = temp;
-    props.updateBoard(board);
+    updateBoard(board);
   }
-
   return (
     <div className={gameStyles.gameFieldContainer} style={{width: sizeContainer, height: sizeContainer}}>
       {
-        gameItems.map((item, index) => {
+        gameItems.map((item) => {
           return (
-            <Cell key={item} value={item} clickHandler={changeGameFields.bind(this, item)} endItem={endItem} />
+            <Cell key={item} value={item} clickHandler={changeGameFields.bind(this, item)} endItem={endItem}/>
           )
         })
       }
     </div>
   )
 }
+
+const mapStateToProps = (state) => ({
+  areEffectsOn: state.settings[0].state,
+  musicVolume: state.settings[2].state,
+  sizeGame: state.settings[3].state
+});
+
+export default connect(mapStateToProps)(GameChips);

@@ -1,4 +1,7 @@
 export function toggleSetting(setting, newSliderValue) {
+  if (setting.target.value) {
+    localStorage.board = '';
+  }
   return {
     type: 'TOGGLE_SETTINGS',
     target: setting.target.name || setting.target.ariaLabel,
@@ -20,5 +23,14 @@ export function toggleTheme(theme) {
     type: 'TOGGLE_THEME',
     value: theme.target.value || theme.target.parentNode.value,
     payload: theme,
+  };
+}
+
+export function toggleScore(score) {
+  console.log("score", score);
+  return {
+    type: 'TOGGLE_SCORE',
+    value: score,
+    payload: score,
   };
 }
