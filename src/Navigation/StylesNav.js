@@ -24,7 +24,11 @@ export const stylesNav = {
     alignItems: 'center',
     flexDirection: 'column',
     position: 'absolute',
-    top: '45%'
+    top: '45%',
+
+    '& a': {
+      textDecoration: 'none'
+    }
   },
 
   navMenuItem: {
