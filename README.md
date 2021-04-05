@@ -1,4 +1,5 @@
-# react-game
+# react-game 
+Deploy: https://juliagvozdeva.github.io/react-game
 
 ## Gem-puzzle
 
